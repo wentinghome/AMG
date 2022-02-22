@@ -1,5 +1,12 @@
-# AMG
+# Attend, Memorize and Generate: Towards Faithful Table-to-Text Generation in Few Shots
 Data, Checkpoint, and Model for EMNLP Findings paper "Attend, Memorize and Generate: Towards Faithful Table-to-TextGeneration in Few Shots" https://aclanthology.org/2021.findings-emnlp.347/
+
+## Description
+1. In AMG paper, we first do task-adaptive training for the AMG model using masked language model training objective to learn better model weights, then apply the checkpoint at second step to fine-tune the wiki-human/books/songs data on the model.
+
+2. This repository provides the checkpoint after the task-adpative training, as well as data, code for the second fine-tuning step.
+
+Feel free to reach out if you have any question!
 
 ## Installation
 ### install pytorch
@@ -17,16 +24,53 @@ The original data, processed data, CKPT can be download from [AMG-DATA-MODEL-CKP
 ```
 AMG-DATA-MODEL-CKPT
 ├── 1-wiki-human-folder
-│   ├── begin-with-the-crazy-ideas.textile
-│   └── on-simplicity-in-technology.markdown
-│   └── on-simplicity-in-technology.markdown
-│   └── on-simplicity-in-technology.markdown
+│   ├── 1_original_data_500 (original data from wiki-dataset in Fewshot NLG)
+│   └── 3_few_shot_plotmachine (the data format for the fine-tuning)
+│   └── 4_pre_entity_embed_folder  (entity embedding for fine-tuning and inference)
+│   └── CKPT (checkpoint after the task adaptive training)
 ├── 2-wiki-song-folder
-│   ├── footer.html
-│   └── header.html
+│   ├── 1_original_data_500
+│   └── 3_few_shot_plotmachine
+│   └── 4_pre_entity_embed_folder
+│   └── CKPT
 ├── 3-wiki-books-folder
-    ├── default.html
-    └── post.html
+│   ├── 1_original_data_500
+│   └── 3_few_shot_plotmachine
+│   └── 4_pre_entity_embed_folder
+│   └── CKPT
 ```
-### Step1:
+
+Take wiki-Human folder as an example, 1_original_data_500 contains original data from wiki-dataset in Fewshot NLG, 3_few_shot_plotmachine has the data with format for the fine-tuning, while 4_pre_entity_embed_folder  provides entity embedding for fine-tuning and inference.
+
 Unzip AMG-DATA-MODEL-CKPT, and place three folders: 1-wiki-human-folder,2-wiki-song-folder and 3-wiki-books-folder under path /data0 .
+
+## Training
+```
+python ./biunilm/run_all_domains.py
+```
+
+## Inference
+```
+python ./biunilm/decode_all_domains.py
+```
+
+## BibTeX
+If you find this code useful in your research, please cite our paper.
+```
+@inproceedings{zhao-etal-2021-attend-memorize,
+    title = "Attend, Memorize and Generate: Towards Faithful Table-to-Text Generation in Few Shots",
+    author = "Zhao, Wenting  and
+      Liu, Ye  and
+      Wan, Yao  and
+      Yu, Philip",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2021",
+    month = nov,
+    year = "2021",
+    address = "Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.findings-emnlp.347",
+    doi = "10.18653/v1/2021.findings-emnlp.347",
+    pages = "4106--4117"
+}
+
+```
