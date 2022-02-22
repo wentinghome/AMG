@@ -19,13 +19,14 @@ This repo provides the source code & data of our paper: "Attend, Memorize and Ge
 }
 
 ```
+Feel free to reach out if you have any question!
 
 ## Description
 1. In AMG paper, we first do task-adaptive training for the AMG model using masked language model training objective to learn better model weights, then apply the checkpoint at second step to fine-tune the wiki-human/books/songs data on the model.
 
 2. This repository provides the checkpoint after the task-adpative training, as well as data, code for the second fine-tuning step.
 
-Feel free to reach out if you have any question!
+
 
 ## Installation
 ### install pytorch
