@@ -1,5 +1,24 @@
 # Attend, Memorize and Generate: Towards Faithful Table-to-Text Generation in Few Shots
-Data, Checkpoint, and Model for EMNLP Findings paper "Attend, Memorize and Generate: Towards Faithful Table-to-TextGeneration in Few Shots" https://aclanthology.org/2021.findings-emnlp.347/
+This repo provides the source code & data of our paper: "Attend, Memorize and Generate: Towards Faithful Table-to-TextGeneration in Few Shots" https://aclanthology.org/2021.findings-emnlp.347 (EMNLP Findings 2021)
+
+```
+@inproceedings{zhao-etal-2021-attend-memorize,
+    title = "Attend, Memorize and Generate: Towards Faithful Table-to-Text Generation in Few Shots",
+    author = "Zhao, Wenting  and
+      Liu, Ye  and
+      Wan, Yao  and
+      Yu, Philip",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2021",
+    month = nov,
+    year = "2021",
+    address = "Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.findings-emnlp.347",
+    doi = "10.18653/v1/2021.findings-emnlp.347",
+    pages = "4106--4117"
+}
+
+```
 
 ## Description
 1. In AMG paper, we first do task-adaptive training for the AMG model using masked language model training objective to learn better model weights, then apply the checkpoint at second step to fine-tune the wiki-human/books/songs data on the model.
@@ -54,23 +73,4 @@ python ./biunilm/run_all_domains.py
 python ./biunilm/decode_all_domains.py
 ```
 
-## BibTeX
-If you find this code useful in your research, please cite our paper.
-```
-@inproceedings{zhao-etal-2021-attend-memorize,
-    title = "Attend, Memorize and Generate: Towards Faithful Table-to-Text Generation in Few Shots",
-    author = "Zhao, Wenting  and
-      Liu, Ye  and
-      Wan, Yao  and
-      Yu, Philip",
-    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2021",
-    month = nov,
-    year = "2021",
-    address = "Punta Cana, Dominican Republic",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2021.findings-emnlp.347",
-    doi = "10.18653/v1/2021.findings-emnlp.347",
-    pages = "4106--4117"
-}
 
-```
