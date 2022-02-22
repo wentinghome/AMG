@@ -13,7 +13,7 @@ Data is from the Few-shot NLG with three domains : Humans, Songs and Books.
 
 The original data, processed data, CKPT can be download from [AMG-DATA-MODEL-CKPT](https://drive.google.com/drive/folders/1-EHaDP3L2BYQTO_mekCr9cfkZz1p2-3F?usp=sharing) Google Drive.
 
-## Data Organization:
+### Data Organization:
 ```
 AMG-DATA-MODEL-CKPT
 ├── 1-wiki-human-folder
@@ -28,5 +28,5 @@ AMG-DATA-MODEL-CKPT
     ├── default.html
     └── post.html
 ```
-# Step1:
+### Step1:
 Unzip AMG-DATA-MODEL-CKPT, and place three folders: 1-wiki-human-folder,2-wiki-song-folder and 3-wiki-books-folder under path /data0 .
